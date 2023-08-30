@@ -1,0 +1,91 @@
+{% load static %}
+<html>
+<head>
+<title>Currency converter</title>
+ <link rel="stylesheet" href="{% static 'style.css' %}" />
+</head>
+<body>
+<div class="container">
+   <h1>Currency Converter</h1>
+   <h2>{{ result|floatformat:2  }} {{ currency_to }}</h2>
+   <form method="post" action="{% url 'index' %}">
+   {% csrf_token %}
+   <div class="select-text">
+      <input  name="amount" type="text">
+   </div>
+   <br>
+   <div class="select-wrapper">
+      <select name="currency_from" class="select">
+         <option value="USD">USD</option>
+         <option value="EUR">EUR</option>
+         <option value="UZS">UZS</option>
+         <option value="KZT">KZT</option>
+         <option value="RUB">RUB</option>
+         <option value="GBP">GBP</option>
+         <option value="CHF">CHF</option>
+         <option value="JPY">JPY</option>
+         <option value="AUD">AUD</option>
+         <option value="CAD">CAD</option>
+         <option value="CNY">CNY</option>
+         <option value="DKK">DKK</option>
+         <option value="EGP">EGP</option>
+         <option value="ISK">ISK</option>
+         <option value="KRW">KRW</option>
+         <option value="KWD">KWD</option>
+         <option value="LBP">LBP</option>
+         <option value="MYR">MYR</option>
+         <option value="NOK">NOK</option>
+         <option value="PLN">PLN</option>
+         <option value="TRY">TRY</option>
+         <option value="UAH">UAH</option>
+         <option value="PKR">PKR</option>
+         <option value="IQD">IQD</option>
+         <option value="MAD">MAD</option>
+         <option value="SAR">SAR</option>
+         <option value="MXN">MXN</option>
+         <option value="LAK">LAK</option>
+         <option value="ZAR">ZAR</option>
+         <option value="HKD">HKD</option>
+      </select>
+   </div>
+   <br>
+   <div class="select-wrapper">
+      <select name="currency_to" class="select">
+         <option value="USD">USD</option>
+         <option value="EUR">EUR</option>
+         <option value="UZS">UZS</option>
+         <option value="KZT">KZT</option>
+         <option value="RUB">RUB</option>
+         <option value="GBP">GBP</option>
+         <option value="CHF">CHF</option>
+         <option value="JPY">JPY</option>
+         <option value="AUD">AUD</option>
+         <option value="CAD">CAD</option>
+         <option value="CNY">CNY</option>
+         <option value="DKK">DKK</option>
+         <option value="EGP">EGP</option>
+         <option value="ISK">ISK</option>
+         <option value="KRW">KRW</option>
+         <option value="KWD">KWD</option>
+         <option value="LBP">LBP</option>
+         <option value="MYR">MYR</option>
+         <option value="NOK">NOK</option>
+         <option value="PLN">PLN</option>
+         <option value="TRY">TRY</option>
+         <option value="UAH">UAH</option>
+         <option value="PKR">PKR</option>
+         <option value="IQD">IQD</option>
+         <option value="MAD">MAD</option>
+         <option value="SAR">SAR</option>
+         <option value="MXN">MXN</option>
+         <option value="LAK">LAK</option>
+         <option value="ZAR">ZAR</option>
+         <option value="HKD">HKD</option>
+      </select>
+   </div>
+   <br>
+   <div class="select-submit">
+      <input class="submit" type="submit" value="Convert">
+   </div>
+</body>
+</html>
